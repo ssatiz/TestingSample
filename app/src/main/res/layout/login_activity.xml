@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ui.registration.RegistrationActivity">
+    tools:context=".ui.login.LoginActivity">
 
     <data>
 
         <variable
-            name="registrationActVM"
-            type="com.testing.sample.ui.registration.RegistrationActivityViewModel" />
+            name="loginActVM"
+            type="com.testing.sample.ui.login.LoginActivityViewModel" />
     </data>
 
     <FrameLayout

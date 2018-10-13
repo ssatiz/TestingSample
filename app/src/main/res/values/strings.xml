@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">TestingSample</string>
+
+    //Login
+    <string name="login_fragment">Login Fragment</string>
+    <string name="login_hint_username">User name</string>
+    <string name="login_hint_password">Password</string>
+    <string name="button_next">Next</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="button_register">Create Account</string>
+    <string name="button_forget_password">Foget Password</string>
+
+    //Registration
+    <string name="registration_fragment">Registration Fragment</string>
+
+    //Forget password
+    <string name="forget_password_fragment">Forget Password Fragment</string>
 </resources>

@@ -9,11 +9,11 @@ import com.testing.sample.base.BaseViewModel
 
 class RegistrationFragment : BaseFragment<ViewDataBinding, BaseViewModel>() {
     override fun getViewModel(): BaseViewModel {
-        return registrationFVM
+        return registrationFragVM
     }
 
     override fun getBindingVariable(): Int {
-        return BR.registrationFVM
+        return BR.registrationFragVM
     }
 
     override fun getContentView(): Int {
@@ -24,7 +24,7 @@ class RegistrationFragment : BaseFragment<ViewDataBinding, BaseViewModel>() {
         fun newInstance() = RegistrationFragment()
     }
 
-    private val registrationFVM: RegistrationFragmentViewModel by lazy {
+    private val registrationFragVM: RegistrationFragmentViewModel by lazy {
         RegistrationFragmentViewModel(BaseApplication.getAppInstance()!!)
     }
 }

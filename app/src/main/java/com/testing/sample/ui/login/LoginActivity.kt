@@ -1,4 +1,4 @@
-package com.testing.sample.ui.registration
+package com.testing.sample.ui.login
 
 import android.os.Bundle
 import androidx.databinding.ViewDataBinding
@@ -7,28 +7,29 @@ import com.testing.sample.R
 import com.testing.sample.base.BaseActivity
 import com.testing.sample.base.BaseViewModel
 
-class RegistrationActivity : BaseActivity<ViewDataBinding, BaseViewModel>() {
+class LoginActivity : BaseActivity<ViewDataBinding, BaseViewModel>() {
+
     override fun getViewModel(): BaseViewModel {
-        return registrationActVM
+        return loginActVM
     }
 
     override fun getBindingVariable(): Int {
-        return BR.registrationActVM
+        return BR.loginActVM
     }
 
     override fun getContentView(): Int {
-        return R.layout.registration_activity
+        return R.layout.login_activity
     }
 
-    private val registrationActVM: RegistrationActivityViewModel by lazy {
-        RegistrationActivityViewModel(application)
+    private val loginActVM: LoginActivityViewModel by lazy {
+        LoginActivityViewModel(application)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                    .replace(R.id.container, RegistrationFragment.newInstance())
+                    .replace(R.id.container, LoginFragment.newInstance())
                     .commitNow()
         }
     }
