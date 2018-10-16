@@ -2,17 +2,29 @@
     <string name="app_name">TestingSample</string>
 
     //Login
+    <string name="login_welcome">Welcome</string>
     <string name="login_fragment">Login Fragment</string>
-    <string name="login_hint_username">User name</string>
-    <string name="login_hint_password">Password</string>
-    <string name="button_next">Next</string>
-    <string name="button_cancel">Cancel</string>
-    <string name="button_register">Create Account</string>
-    <string name="button_forget_password">Foget Password</string>
+    <string name="login_username_hint">User name</string>
+    <string name="login_password_hint">Password</string>
+    <string name="login_next">Next</string>
+    <string name="login_cancel">Cancel</string>
+    <string name="login_create_account">Create Account</string>
+    <string name="login_forget_password">Forget Password</string>
 
     //Registration
-    <string name="registration_fragment">Registration Fragment</string>
+    <string name="registration_create_your_account">Create your account</string>
+    <string name="registration_first_name_hint">First Name</string>
+    <string name="registration_last_name_hint">Last Name</string>
+    <string name="registration_phone_number_hint">Phone Number</string>
+    <string name="registration_password_hint">Password</string>
+    <string name="registration_confirm_password_hint">Confirm password</string>
+    <string name="registration_create">Create</string>
+    <string name="registration_back">Back</string>
 
     //Forget password
-    <string name="forget_password_fragment">Forget Password Fragment</string>
+    <string name="forget_password_new_password_will_be_send_via_email">New password will be send via E-mail</string>
+    <string name="forget_password_email">Email</string>
+    <string name="forget_password_send">Send</string>
+    <string name="forget_password_back">Back</string>
+
 </resources>

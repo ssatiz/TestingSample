@@ -26,10 +26,12 @@ class ForgetPasswordActivity : BaseActivity<ViewDataBinding, BaseViewModel>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction()
-                    .replace(R.id.container, ForgetPasswordFragment.newInstance())
-                    .commitNow()
-        }
+        setFragment()
+    }
+
+    private fun setFragment() {
+        supportFragmentManager.beginTransaction()
+                .replace(R.id.container, ForgetPasswordFragment.newInstance())
+                .commitNow()
     }
 }

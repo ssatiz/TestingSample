@@ -26,11 +26,13 @@ class RegistrationActivity : BaseActivity<ViewDataBinding, BaseViewModel>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction()
-                    .replace(R.id.container, RegistrationFragment.newInstance())
-                    .commitNow()
-        }
+        setFragment()
+    }
+
+    private fun setFragment() {
+        supportFragmentManager.beginTransaction()
+                .replace(R.id.container, RegistrationFragment.newInstance())
+                .commitNow()
     }
 
 }

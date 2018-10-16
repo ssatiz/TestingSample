@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
 
 /**
  * Created by SunTrust on 10/11/2018.
@@ -33,7 +34,7 @@ abstract class BaseFragment<out V : ViewDataBinding, out T : BaseViewModel> : Fr
     }
 
     private fun performDataBinding() {
-        mViewModel = getViewModel()
+        mViewModel = ViewModelProviders.of(this).get(getViewModel()::class.java)
         mDataBinding?.setVariable(getBindingVariable(), mViewModel)
         mDataBinding?.executePendingBindings()
     }

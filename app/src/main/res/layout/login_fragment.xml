@@ -16,19 +16,26 @@
         android:layout_height="match_parent"
         android:background="@android:color/white">
 
-        <LinearLayout
+
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:clipChildren="false"
-            android:clipToPadding="false"
+            android:layout_marginTop="@dimen/dp60"
             android:orientation="vertical"
-            android:padding="24dp">
+            android:padding="@dimen/dp25">
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/DescriptionLabel"
+                android:gravity="center"
+                android:text="@string/login_welcome"
+                android:textAllCaps="true"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/login_hint_username">
+                android:layout_marginTop="@dimen/dp45"
+                android:hint="@string/login_username_hint">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/txtUserName"
@@ -40,8 +47,7 @@
                 android:id="@+id/txtInputPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:hint="@string/login_hint_password">
+                android:hint="@string/login_password_hint">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/txtPassword"
@@ -52,24 +58,25 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp20">
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnNext"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:backgroundTint="@color/colorPrimaryDark"
-                    android:text="@string/button_next" />
+                    android:backgroundTint="@color/colorPrimary"
+                    android:text="@string/login_next" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnCancel"
                     style="@style/Widget.MaterialComponents.Button.TextButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="12dp"
+                    android:layout_marginEnd="@dimen/dp15"
                     android:layout_toStartOf="@id/btnNext"
-                    android:text="@string/button_cancel" />
+                    android:text="@string/login_cancel" />
             </RelativeLayout>
 
             <com.google.android.material.button.MaterialButton
@@ -77,8 +84,8 @@
                 style="@style/Widget.MaterialComponents.Button.TextButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="@string/button_forget_password"
+                android:layout_marginTop="@dimen/dp25"
+                android:text="@string/login_forget_password"
                 app:rippleColor="@android:color/transparent" />
 
             <com.google.android.material.button.MaterialButton
@@ -86,9 +93,8 @@
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:layout_marginTop="30dp"
-                android:text="@string/button_register" />
-        </LinearLayout>
+                android:layout_margin="@dimen/dp30"
+                android:text="@string/login_create_account" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
     </ScrollView>
 </layout>

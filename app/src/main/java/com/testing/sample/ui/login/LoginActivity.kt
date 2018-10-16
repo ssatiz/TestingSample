@@ -30,7 +30,7 @@ class LoginActivity : BaseActivity<ViewDataBinding, BaseViewModel>() {
         setFragment()
     }
 
-    fun setFragment(){
+    private fun setFragment(){
         supportFragmentManager.beginTransaction()
                 .replace(R.id.container, LoginFragment.newInstance())
                 .commitNow()
