@@ -8,10 +8,10 @@ import android.app.Application
 class BaseApplication : Application() {
 
     companion object {
-        private var instance: BaseApplication? = null
+        private var INSTANCE: BaseApplication? = null
         fun getAppInstance(): BaseApplication? {
-            if (instance == null) instance = BaseApplication()
-            return instance
+            if (INSTANCE == null) INSTANCE = BaseApplication()
+            return INSTANCE
         }
 
     }

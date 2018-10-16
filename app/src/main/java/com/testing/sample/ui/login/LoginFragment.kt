@@ -9,6 +9,7 @@ import com.testing.sample.R
 import com.testing.sample.base.BaseApplication
 import com.testing.sample.base.BaseFragment
 import com.testing.sample.base.BaseViewModel
+import com.testing.sample.repository.Injection
 import com.testing.sample.ui.forgetPassword.ForgetPasswordActivity
 import com.testing.sample.ui.registration.RegistrationActivity
 import kotlinx.android.synthetic.main.login_fragment.*
