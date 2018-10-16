@@ -36,26 +36,24 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     //Kotlin lib
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     kapt "com.android.databinding:compiler:$androidPluginVersion"
-
     //Support lib
     api "com.google.android.material:material:$project.material_version"
     implementation "androidx.appcompat:appcompat:$project.appcompat_version"
     implementation "androidx.constraintlayout:constraintlayout:$project.constraintlayout_version"
-
     //Architecture components lib
     implementation "androidx.lifecycle:lifecycle-extensions:$project.lifecycle_version"
-
     //Test lib
     androidTestImplementation "androidx.test.ext:junit:$project.junit_version"
     androidTestImplementation "androidx.test:runner:$project.test_runner_version"
     androidTestImplementation "androidx.test:rules:$project.test_runner_version"
-
     androidTestImplementation "androidx.test.espresso:espresso-core:$project.espresso_version"
     androidTestImplementation "androidx.test.espresso:espresso-intents:$project.espresso_version"
     androidTestImplementation "androidx.test.espresso:espresso-web:$project.espresso_version"
+
+    //gson lib
+    implementation "com.google.code.gson:gson:$project.gson_version"
 }

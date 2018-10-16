@@ -4,7 +4,7 @@
     //Login
     <string name="login_welcome">Welcome</string>
     <string name="login_fragment">Login Fragment</string>
-    <string name="login_username_hint">User name</string>
+    <string name="login_phone_number_hint">Phone Number</string>
     <string name="login_password_hint">Password</string>
     <string name="login_next">Next</string>
     <string name="login_cancel">Cancel</string>
