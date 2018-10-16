@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import androidx.lifecycle.ViewModelProviders
 
 /**
  * Created by SunTrust on 10/11/2018.
@@ -27,7 +28,7 @@ abstract class BaseActivity<out V : ViewDataBinding, out T : BaseViewModel> : Ap
 
     private fun performDataBinding() {
         mDataBinding = DataBindingUtil.setContentView(this, getContentView())
-        mViewModel = getViewModel()
+        mViewModel = ViewModelProviders.of(this).get(getViewModel()::class.java)
         mDataBinding?.setVariable(getBindingVariable(), mViewModel)
         mDataBinding?.executePendingBindings()
     }

@@ -6,6 +6,8 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: "kotlin-kapt"
 
+apply plugin: "kotlin-android-extensions"
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -45,12 +47,11 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$project.appcompat_version"
     implementation "androidx.constraintlayout:constraintlayout:$project.constraintlayout_version"
 
-
     //Architecture components lib
     implementation "androidx.lifecycle:lifecycle-extensions:$project.lifecycle_version"
 
     //Test lib
-    testImplementation "androidx.test.ext:junit:$project.junit_version"
+    androidTestImplementation "androidx.test.ext:junit:$project.junit_version"
     androidTestImplementation "androidx.test:runner:$project.test_runner_version"
     androidTestImplementation "androidx.test:rules:$project.test_runner_version"
 

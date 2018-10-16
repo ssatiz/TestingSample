@@ -27,11 +27,13 @@ class LoginActivity : BaseActivity<ViewDataBinding, BaseViewModel>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction()
-                    .replace(R.id.container, LoginFragment.newInstance())
-                    .commitNow()
-        }
+        setFragment()
+    }
+
+    fun setFragment(){
+        supportFragmentManager.beginTransaction()
+                .replace(R.id.container, LoginFragment.newInstance())
+                .commitNow()
     }
 
 }
