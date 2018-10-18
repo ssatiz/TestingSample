@@ -1,4 +1,4 @@
-package com.testing.sample.ui.todos
+package com.testing.sample.ui.todo
 
 import android.app.Application
 import com.testing.sample.base.BaseViewModel

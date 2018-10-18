@@ -28,7 +28,7 @@
                     android:scheme="http" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.todos.TodoListActivity"/>
+        <activity android:name=".ui.todo.TodoListActivity"/>
     </application>
 
 </manifest>
