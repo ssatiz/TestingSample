@@ -31,6 +31,7 @@ abstract class BaseActivity<out V : ViewDataBinding, out T : BaseViewModel> : Ap
         mViewModel = ViewModelProviders.of(this).get(getViewModel()::class.java)
         mDataBinding?.setVariable(getBindingVariable(), mViewModel)
         mDataBinding?.executePendingBindings()
+        mViewModel?.initialize(this)
     }
 
 

@@ -22,7 +22,7 @@ class ForgetPasswordFragment : BaseFragment<FragmentForgetPasswordBinding, Forge
     }
 
     private val forgetPasswordFragVM: ForgetPasswordFragmentViewModel by lazy {
-        ForgetPasswordFragmentViewModel(BaseApplication.getAppInstance()!!)
+        ForgetPasswordFragmentViewModel()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

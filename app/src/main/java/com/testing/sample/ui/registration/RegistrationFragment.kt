@@ -20,7 +20,7 @@ class RegistrationFragment : BaseFragment<FragmentRegistrationBinding, Registrat
     }
 
     private val registrationFragVM: RegistrationFragmentViewModel by lazy {
-        RegistrationFragmentViewModel(BaseApplication.getAppInstance()!!)
+        RegistrationFragmentViewModel()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

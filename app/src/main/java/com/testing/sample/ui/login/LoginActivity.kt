@@ -18,7 +18,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginActivityViewModel>
     override fun getContentView() = R.layout.activity_login
 
     private val loginActVM: LoginActivityViewModel by lazy {
-        LoginActivityViewModel(application)
+        LoginActivityViewModel()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,7 +33,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginActivityViewModel>
         transaction.commit()
     }
 
-    fun redirectToFrogetPassword() {
+    fun redirectToForgetPassword() {
         setFragment(ForgetPasswordFragment.newInstance(), true, tagString = ForgetPasswordFragment::class.java.name)
     }
 

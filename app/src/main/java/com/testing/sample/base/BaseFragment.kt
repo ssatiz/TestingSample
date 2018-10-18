@@ -17,7 +17,7 @@ abstract class BaseFragment<out V : ViewDataBinding, out T : BaseViewModel> : Fr
     private var mDataBinding: V? = null
     private var mViewModel: T? = null
 
-    abstract fun getViewModel(): T
+    abstract fun getViewModel(): T?
 
     abstract fun getBindingVariable(): Int
 
@@ -34,8 +34,10 @@ abstract class BaseFragment<out V : ViewDataBinding, out T : BaseViewModel> : Fr
     }
 
     private fun performDataBinding() {
-        mViewModel = ViewModelProviders.of(this).get(getViewModel()::class.java)
-        mDataBinding?.setVariable(getBindingVariable(), mViewModel)
-        mDataBinding?.executePendingBindings()
+        getViewModel()?.let {
+            mViewModel = ViewModelProviders.of(this).get(it::class.java)
+            mDataBinding?.setVariable(getBindingVariable(), mViewModel)
+            mDataBinding?.executePendingBindings()
+        }
     }
 }
