@@ -39,6 +39,7 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     //Kotlin lib
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
     kapt "com.android.databinding:compiler:$androidPluginVersion"
     //Support lib
     api "com.google.android.material:material:$project.material_version"

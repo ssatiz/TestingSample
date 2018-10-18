@@ -10,17 +10,11 @@ import com.testing.sample.databinding.FragmentLoginBinding
 import kotlinx.android.synthetic.main.fragment_login.*
 
 class LoginFragment : BaseFragment<FragmentLoginBinding, LoginFragmentViewModel>(), View.OnClickListener {
-    override fun getViewModel(): LoginFragmentViewModel {
-        return loginFragVM
-    }
+    override fun getViewModel() = loginFragVM
 
-    override fun getBindingVariable(): Int {
-        return BR.loginFragVM
-    }
+    override fun getBindingVariable() = BR.loginFragVM
 
-    override fun getContentView(): Int {
-        return R.layout.fragment_login
-    }
+    override fun getContentView() = R.layout.fragment_login
 
     companion object {
         fun newInstance() = LoginFragment()

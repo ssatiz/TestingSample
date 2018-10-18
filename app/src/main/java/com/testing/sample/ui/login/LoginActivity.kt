@@ -11,17 +11,11 @@ import com.testing.sample.ui.registration.RegistrationFragment
 
 class LoginActivity : BaseActivity<ActivityLoginBinding, LoginActivityViewModel>() {
 
-    override fun getViewModel(): LoginActivityViewModel {
-        return loginActVM
-    }
+    override fun getViewModel()=loginActVM
 
-    override fun getBindingVariable(): Int {
-        return BR.loginActVM
-    }
+    override fun getBindingVariable()=BR.loginActVM
 
-    override fun getContentView(): Int {
-        return R.layout.activity_login
-    }
+    override fun getContentView()=R.layout.activity_login
 
     private val loginActVM: LoginActivityViewModel by lazy {
         LoginActivityViewModel(application)

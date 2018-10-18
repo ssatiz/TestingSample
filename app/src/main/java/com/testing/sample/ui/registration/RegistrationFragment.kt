@@ -10,17 +10,10 @@ import com.testing.sample.databinding.FragmentRegistrationBinding
 import kotlinx.android.synthetic.main.fragment_registration.*
 
 class RegistrationFragment : BaseFragment<FragmentRegistrationBinding, RegistrationFragmentViewModel>(), View.OnClickListener {
-    override fun getViewModel(): RegistrationFragmentViewModel {
-        return registrationFragVM
-    }
+    override fun getViewModel()=registrationFragVM
 
-    override fun getBindingVariable(): Int {
-        return BR.registrationFragVM
-    }
-
-    override fun getContentView(): Int {
-        return R.layout.fragment_registration
-    }
+    override fun getBindingVariable()=BR.registrationFragVM
+    override fun getContentView()=R.layout.fragment_registration
 
     companion object {
         fun newInstance() = RegistrationFragment()

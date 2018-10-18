@@ -11,18 +11,11 @@ import kotlinx.android.synthetic.main.fragment_forget_password.*
 
 class ForgetPasswordFragment : BaseFragment<FragmentForgetPasswordBinding, ForgetPasswordFragmentViewModel>(), View.OnClickListener {
 
-    override fun getViewModel(): ForgetPasswordFragmentViewModel {
-        return forgetPasswordFragVM
-    }
+    override fun getViewModel()=forgetPasswordFragVM
 
-    override fun getBindingVariable(): Int {
-        return BR.forgetPasswordFragVM
-    }
+    override fun getBindingVariable()=BR.forgetPasswordFragVM
 
-    override fun getContentView(): Int {
-        return R.layout.fragment_forget_password
-    }
-
+    override fun getContentView()=R.layout.fragment_forget_password
     companion object {
         fun newInstance() = ForgetPasswordFragment()
     }
