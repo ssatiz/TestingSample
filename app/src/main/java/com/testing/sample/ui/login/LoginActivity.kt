@@ -1,15 +1,17 @@
 package com.testing.sample.ui.login
 
 import android.os.Bundle
-import androidx.databinding.ViewDataBinding
+import androidx.fragment.app.Fragment
 import com.testing.sample.BR
 import com.testing.sample.R
 import com.testing.sample.base.BaseActivity
-import com.testing.sample.base.BaseViewModel
+import com.testing.sample.databinding.ActivityLoginBinding
+import com.testing.sample.ui.forgetPassword.ForgetPasswordFragment
+import com.testing.sample.ui.registration.RegistrationFragment
 
-class LoginActivity : BaseActivity<ViewDataBinding, BaseViewModel>() {
+class LoginActivity : BaseActivity<ActivityLoginBinding, LoginActivityViewModel>() {
 
-    override fun getViewModel(): BaseViewModel {
+    override fun getViewModel(): LoginActivityViewModel {
         return loginActVM
     }
 
@@ -18,7 +20,7 @@ class LoginActivity : BaseActivity<ViewDataBinding, BaseViewModel>() {
     }
 
     override fun getContentView(): Int {
-        return R.layout.login_activity
+        return R.layout.activity_login
     }
 
     private val loginActVM: LoginActivityViewModel by lazy {
@@ -27,13 +29,21 @@ class LoginActivity : BaseActivity<ViewDataBinding, BaseViewModel>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setFragment()
+        setFragment(LoginFragment.newInstance(), tagString = LoginFragment::class.java.name)
     }
 
-    private fun setFragment(){
-        supportFragmentManager.beginTransaction()
-                .replace(R.id.container, LoginFragment.newInstance())
-                .commitNow()
+    private fun setFragment(fragment: Fragment, isAddToBackStack: Boolean = false, tagString: String) {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.add(R.id.container, fragment)
+        if (isAddToBackStack) transaction.addToBackStack(tagString)
+        transaction.commit()
     }
 
+    fun redirectToFrogetPassword() {
+        setFragment(ForgetPasswordFragment.newInstance(), true, tagString = ForgetPasswordFragment::class.java.name)
+    }
+
+    fun redirectToRegistration() {
+        setFragment(RegistrationFragment.newInstance(), true, tagString = RegistrationFragment::class.java.name)
+    }
 }

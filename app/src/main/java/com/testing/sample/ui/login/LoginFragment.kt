@@ -1,21 +1,16 @@
 package com.testing.sample.ui.login
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import androidx.databinding.ViewDataBinding
 import com.testing.sample.BR
 import com.testing.sample.R
 import com.testing.sample.base.BaseApplication
 import com.testing.sample.base.BaseFragment
-import com.testing.sample.base.BaseViewModel
-import com.testing.sample.repository.Injection
-import com.testing.sample.ui.forgetPassword.ForgetPasswordActivity
-import com.testing.sample.ui.registration.RegistrationActivity
-import kotlinx.android.synthetic.main.login_fragment.*
+import com.testing.sample.databinding.FragmentLoginBinding
+import kotlinx.android.synthetic.main.fragment_login.*
 
-class LoginFragment : BaseFragment<ViewDataBinding, BaseViewModel>(), View.OnClickListener {
-    override fun getViewModel(): BaseViewModel {
+class LoginFragment : BaseFragment<FragmentLoginBinding, LoginFragmentViewModel>(), View.OnClickListener {
+    override fun getViewModel(): LoginFragmentViewModel {
         return loginFragVM
     }
 
@@ -24,7 +19,7 @@ class LoginFragment : BaseFragment<ViewDataBinding, BaseViewModel>(), View.OnCli
     }
 
     override fun getContentView(): Int {
-        return R.layout.login_fragment
+        return R.layout.fragment_login
     }
 
     companion object {
@@ -45,10 +40,10 @@ class LoginFragment : BaseFragment<ViewDataBinding, BaseViewModel>(), View.OnCli
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.btnForgetPassword -> {
-                startActivity(Intent(activity, ForgetPasswordActivity::class.java))
+                (activity as LoginActivity).redirectToFrogetPassword()
             }
             R.id.btnRegister -> {
-                startActivity(Intent(activity, RegistrationActivity::class.java))
+                (activity as LoginActivity).redirectToRegistration()
             }
         }
     }
