@@ -1,11 +1,10 @@
 package com.testing.sample.base
 
-import com.testing.sample.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import java.util.concurrent.TimeUnit
 
-open class BaseOKHttp{
+open class BaseOKHttp {
     companion object {
         const val NETWORK_CONNECTION_TIMEOUT = 1L
         const val NETWORK_READ_TIMEOUT = 30L
@@ -21,7 +20,7 @@ open class BaseOKHttp{
 
         //show logs if app is in Debug mode
 //        if (BuildConfig.DEBUG)
-            okHttpClient.addInterceptor(provideHttpLoggingInterceptor())
+        okHttpClient.addInterceptor(provideHttpLoggingInterceptor())
         return okHttpClient.build()
     }
 

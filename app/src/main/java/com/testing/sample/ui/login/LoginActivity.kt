@@ -18,7 +18,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginActivityViewModel>
     override fun getContentView() = R.layout.activity_login
 
     private val loginActVM: LoginActivityViewModel by lazy {
-        LoginActivityViewModel()
+        obtainViewModel(LoginActivityViewModel::class.java)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

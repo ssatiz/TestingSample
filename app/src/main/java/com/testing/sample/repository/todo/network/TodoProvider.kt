@@ -5,14 +5,14 @@ import com.testing.sample.Todo
 import com.testing.sample.base.BaseRetrofit
 import io.reactivex.Observable
 
-open class TodoProvider(con: Context): BaseRetrofit(){
+open class TodoProvider(con: Context) : BaseRetrofit() {
 
-    private fun getService(): TodoService{
+    private fun getService(): TodoService {
         return buildRetrofit().create(TodoService::class.java)
     }
 
     fun getTodoList(): Observable<MutableList<Todo>> {
-        return getService().getTodoList().doOnNext {  }
+        return getService().getTodoList().doOnNext { }
     }
 
 }

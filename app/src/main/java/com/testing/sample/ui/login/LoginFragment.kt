@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.View
 import com.testing.sample.BR
 import com.testing.sample.R
-import com.testing.sample.base.BaseApplication
 import com.testing.sample.base.BaseFragment
 import com.testing.sample.databinding.FragmentLoginBinding
 import com.testing.sample.ui.todo.TodoListActivity
@@ -23,7 +22,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding, LoginFragmentViewModel>
     }
 
     private val loginFragVM: LoginFragmentViewModel by lazy {
-        LoginFragmentViewModel()
+        obtainViewModel(LoginFragmentViewModel::class.java)
     }
 
 

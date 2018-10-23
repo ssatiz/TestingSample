@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.View
 import com.testing.sample.BR
 import com.testing.sample.R
-import com.testing.sample.base.BaseApplication
 import com.testing.sample.base.BaseFragment
 import com.testing.sample.databinding.FragmentForgetPasswordBinding
 import kotlinx.android.synthetic.main.fragment_forget_password.*
@@ -22,7 +21,7 @@ class ForgetPasswordFragment : BaseFragment<FragmentForgetPasswordBinding, Forge
     }
 
     private val forgetPasswordFragVM: ForgetPasswordFragmentViewModel by lazy {
-        ForgetPasswordFragmentViewModel()
+        obtainViewModel(ForgetPasswordFragmentViewModel::class.java)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

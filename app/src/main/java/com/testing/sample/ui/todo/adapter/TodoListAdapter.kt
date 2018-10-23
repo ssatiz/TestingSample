@@ -2,16 +2,14 @@ package com.testing.sample.ui.todo.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.databinding.ObservableList
 import androidx.recyclerview.widget.RecyclerView
 import com.testing.sample.Todo
 import com.testing.sample.databinding.ViewHolderTodoBinding
-import com.testing.sample.ui.todo.adapter.TodoViewHolder
 
-class TodoListAdapter: RecyclerView.Adapter<TodoViewHolder>(){
+class TodoListAdapter(private val todoList: ObservableList<Todo>) : RecyclerView.Adapter<TodoViewHolder>() {
 
-    private val todoList = ArrayList<Todo>()
-
-    fun addAll(todoList: ArrayList<Todo>){
+    fun addAll(todoList: ObservableList<Todo>) {
         this.todoList.addAll(todoList)
         notifyDataSetChanged()
     }
@@ -26,7 +24,7 @@ class TodoListAdapter: RecyclerView.Adapter<TodoViewHolder>(){
     }
 
     override fun onBindViewHolder(holder: TodoViewHolder, position: Int) {
-        holder.onBind(todoList.get(position))
+        holder.onBind(todoList[position])
     }
 
 }

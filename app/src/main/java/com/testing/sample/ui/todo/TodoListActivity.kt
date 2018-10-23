@@ -1,26 +1,27 @@
 package com.testing.sample.ui.todo
 
 import android.os.Bundle
-import androidx.databinding.ViewDataBinding
-import com.testing.sample.BR
 import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.LinearLayoutManager
+import com.testing.sample.BR
 import com.testing.sample.R
 import com.testing.sample.base.BaseActivity
-import com.testing.sample.base.BaseViewModel
 import com.testing.sample.databinding.ActivityTodoListBinding
 import com.testing.sample.ui.todo.adapter.TodoListAdapter
 import kotlinx.android.synthetic.main.activity_todo_list.*
 
-class TodoListActivity : BaseActivity<ActivityTodoListBinding, TodoActivityViewModel>() {
-    override fun getViewModel() = todoActVM
+class TodoListActivity : BaseActivity<ActivityTodoListBinding, TodoListActivityViewModel>() {
+    override fun getViewModel() = todoListActVM
 
     override fun getBindingVariable() = BR.todoActVM
 
     override fun getContentView() = R.layout.activity_todo_list
 
-    private val todoActVM: TodoActivityViewModel by lazy {
-        TodoActivityViewModel()
+    private val todoListActVM: TodoListActivityViewModel by lazy {
+        obtainViewModel(TodoListActivityViewModel::class.java)
+    }
+
+    private val adapter by lazy {
+        TodoListAdapter(todoListActVM.todoObservableList)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,13 +32,11 @@ class TodoListActivity : BaseActivity<ActivityTodoListBinding, TodoActivityViewM
         subscribeLiveData()
     }
 
-    private fun setupRecyclerView(){
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.setHasFixedSize(true)
-        recyclerView.adapter = TodoListAdapter()
+    private fun setupRecyclerView() {
+        recyclerView.adapter = adapter
     }
 
-    private fun subscribeLiveData(){
+    private fun subscribeLiveData() {
         getViewModel().todoLiveData.observe(this, Observer {
             getViewModel().observeData(it)
         })

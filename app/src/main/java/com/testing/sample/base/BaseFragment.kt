@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProviders
+import com.testing.sample.helper.ViewModelFactory
 
 /**
  * Created by SunTrust on 10/11/2018.
@@ -40,4 +42,10 @@ abstract class BaseFragment<out V : ViewDataBinding, out T : BaseViewModel> : Fr
             mDataBinding?.executePendingBindings()
         }
     }
+
+    companion object {
+        fun <T : ViewModel> Fragment.obtainViewModel(viewModelClass: Class<T>) =
+                androidx.lifecycle.ViewModelProviders.of(this, ViewModelFactory.getInstance()).get(viewModelClass)
+    }
+
 }
