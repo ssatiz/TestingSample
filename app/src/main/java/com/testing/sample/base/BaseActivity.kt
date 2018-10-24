@@ -1,17 +1,15 @@
 package com.testing.sample.base
 
 import android.os.Bundle
+import androidx.annotation.IdRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProviders
 import com.testing.sample.helper.ViewModelFactory
 
-
-/**
- * Created by SunTrust on 10/11/2018.
- */
 abstract class BaseActivity<out V : ViewDataBinding, out T : BaseViewModel> : AppCompatActivity() {
 
     private var mDataBinding: V? = null
@@ -35,6 +33,14 @@ abstract class BaseActivity<out V : ViewDataBinding, out T : BaseViewModel> : Ap
         mDataBinding?.setVariable(getBindingVariable(), mViewModel)
         mDataBinding?.executePendingBindings()
     }
+
+    protected fun setFragment(@IdRes containerViewId:Int, fragment: Fragment, isAddToBackStack: Boolean = false, tagString: String) {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.add(containerViewId, fragment)
+        if (isAddToBackStack) transaction.addToBackStack(tagString)
+        transaction.commit()
+    }
+
 
     companion object {
         fun <T : ViewModel> AppCompatActivity.obtainViewModel(viewModelClass: Class<T>) =

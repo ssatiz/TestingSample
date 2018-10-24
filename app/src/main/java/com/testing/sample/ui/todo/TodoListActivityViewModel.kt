@@ -10,9 +10,6 @@ import com.testing.sample.repository.todo.TodoDataManager
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
-/**
- * Created by SunTrust on 10/18/2018.
- */
 class TodoListActivityViewModel : BaseViewModel() {
     private var todoDataManager: TodoDataManager? = null
     val todoLiveData = MutableLiveData<MutableList<Todo>>()

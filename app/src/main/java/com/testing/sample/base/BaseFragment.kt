@@ -11,9 +11,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProviders
 import com.testing.sample.helper.ViewModelFactory
 
-/**
- * Created by SunTrust on 10/11/2018.
- */
 abstract class BaseFragment<out V : ViewDataBinding, out T : BaseViewModel> : Fragment() {
 
     private var mDataBinding: V? = null

@@ -10,7 +10,6 @@ import com.testing.sample.ui.login.LoginFragmentViewModel
 import com.testing.sample.ui.registration.RegistrationFragmentViewModel
 import com.testing.sample.ui.todo.TodoListActivityViewModel
 
-
 @Suppress("UNCHECKED_CAST")
 class ViewModelFactory private constructor() : ViewModelProvider.NewInstanceFactory() {
 
