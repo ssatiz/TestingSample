@@ -33,6 +33,7 @@ class TodoListActivity : BaseActivity<ActivityTodoListBinding, TodoListActivityV
     }
 
     private fun setupRecyclerView() {
+        recyclerView.setHasFixedSize(true)
         recyclerView.adapter = adapter
     }
 
