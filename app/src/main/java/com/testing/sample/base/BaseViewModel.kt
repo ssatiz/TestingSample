@@ -6,9 +6,9 @@ import androidx.lifecycle.ViewModel
 /**
  * Created by SunTrust on 10/11/2018.
  */
-abstract class BaseViewModel : ViewModel(){
+abstract class BaseViewModel : ViewModel() {
 
-    open fun initialize(context: Context){
+    open fun initialize(context: Context) {
     }
 
 }

@@ -1,11 +1,10 @@
 package com.testing.sample.repository.todo.network
 
-import android.content.Context
 import com.testing.sample.Todo
 import com.testing.sample.base.BaseRetrofit
 import io.reactivex.Observable
 
-open class TodoProvider(con: Context) : BaseRetrofit() {
+open class TodoProvider : BaseRetrofit() {
 
     private fun getService(): TodoService {
         return buildRetrofit().create(TodoService::class.java)

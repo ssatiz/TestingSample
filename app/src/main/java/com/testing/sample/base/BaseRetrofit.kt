@@ -8,9 +8,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 open class BaseRetrofit : BaseOKHttp() {
 
-    val BASE_URL = "https://jsonplaceholder.typicode.com/"
+    companion object {
+        const val BASE_URL = "https://jsonplaceholder.typicode.com/"
+    }
 
-    fun gsonBuilder(): Gson {
+    private fun gsonBuilder(): Gson {
         return GsonBuilder()
                 .setLenient()
                 .create()

@@ -10,6 +10,6 @@ import com.testing.sample.ui.todo.adapter.TodoListAdapter
 fun refreshBindingValue(recyclerView: RecyclerView, todoList: ObservableList<Todo>) {
     recyclerView.adapter?.let {
         val adapter = it as? TodoListAdapter
-        adapter?.addAll(todoList)
+        adapter?.addAll(ArrayList(todoList))
     }
 }

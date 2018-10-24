@@ -21,7 +21,7 @@ class TodoListActivity : BaseActivity<ActivityTodoListBinding, TodoListActivityV
     }
 
     private val adapter by lazy {
-        TodoListAdapter(todoListActVM.todoObservableList)
+        TodoListAdapter()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

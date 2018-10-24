@@ -1,6 +1,5 @@
 package com.testing.sample.ui.todo
 
-import android.app.Application
 import android.content.Context
 import androidx.databinding.ObservableArrayList
 import androidx.databinding.ObservableList
@@ -22,7 +21,7 @@ class TodoListActivityViewModel : BaseViewModel() {
 
     override fun initialize(context: Context) {
         super.initialize(context)
-        todoDataManager = TodoDataManager(context)
+        todoDataManager = TodoDataManager()
     }
 
     fun getTodoList() {
