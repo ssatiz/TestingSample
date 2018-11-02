@@ -1,5 +1,6 @@
-package com.testing.sample.base
+package com.bpmlinks.utility.network
 
+import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import java.util.concurrent.TimeUnit
@@ -18,10 +19,20 @@ open class BaseOKHttp {
                 .readTimeout(NETWORK_READ_TIMEOUT, TimeUnit.SECONDS)
                 .writeTimeout(NETWORK_WRITE_TIMEOUT, TimeUnit.SECONDS)
 
-        //show logs if app is in Debug mode
 //        if (BuildConfig.DEBUG)
-        okHttpClient.addInterceptor(provideHttpLoggingInterceptor())
+//        okHttpClient.addInterceptor(provideHttpLoggingInterceptor())
         return okHttpClient.build()
+    }
+
+    fun provideHeaderInterceptor(headers: HashMap<String, String>): Interceptor {
+        return Interceptor { chain ->
+            val request = chain.request()?.newBuilder()
+            headers.forEach {
+                request?.addHeader(it.key, it.value)
+            }
+            chain.proceed(request!!.build())
+        }
+
     }
 
     private fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor {

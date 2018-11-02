@@ -1,7 +1,6 @@
 package com.testing.sample.helper
 
 
-import android.annotation.SuppressLint
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.testing.sample.ui.forgetPassword.ForgetPasswordFragmentViewModel
@@ -33,7 +32,6 @@ class ViewModelFactory private constructor() : ViewModelProvider.NewInstanceFact
 
     companion object {
 
-        @SuppressLint("StaticFieldLeak")
         @Volatile
         private var INSTANCE: ViewModelFactory? = null
 

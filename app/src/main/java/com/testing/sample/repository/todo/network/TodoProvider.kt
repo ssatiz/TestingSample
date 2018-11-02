@@ -1,7 +1,7 @@
 package com.testing.sample.repository.todo.network
 
+import com.bpmlinks.utility.network.BaseRetrofit
 import com.testing.sample.Todo
-import com.testing.sample.base.BaseRetrofit
 import io.reactivex.Observable
 
 open class TodoProvider : BaseRetrofit() {

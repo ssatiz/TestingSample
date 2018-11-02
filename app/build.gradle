@@ -6,7 +6,7 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: "kotlin-kapt"
 
-apply plugin: "kotlin-android-extensions"
+def globalConf = rootProject.ext
 
 android {
     compileSdkVersion 28
@@ -55,11 +55,12 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-web:$project.espresso_version"
     //gson lib
     implementation "com.google.code.gson:gson:$project.gson_version"
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.11.0'
-    implementation 'com.squareup.retrofit2:retrofit-adapters:2.4.0'
-    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
-    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
 
+    implementation project(':utility')
+
+    //Declaring that we have a map of the dependency title and the dependency definition
+    Map<String, String> dependencies = globalConf.commonDependencies
+    implementation dependencies.retofit
 }

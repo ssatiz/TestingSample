@@ -1,4 +1,4 @@
-package com.testing.sample.base
+package com.bpmlinks.utility.network
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
